@@ -14,6 +14,7 @@ body {
     width: 100%;
     height: 100vh;
     position: relative;
+    overflow: hidden;
 }
 
 /* Kiểu cho chữ cố định ở giữa */
@@ -24,9 +25,9 @@ body {
     transform: translateX(-50%);
     background-color: #7b007b; /* Màu nền cho hộp thoại */
     color: white;
-    padding: 10px 20px;
     border-radius: 20px;
-    font-size: 1.2em;
+    padding: 2vw 4vw; /* Sử dụng vw thay cho 10px 20px */
+    font-size: 4vw;   /* Sử dụng vw thay cho 1.2em */
     font-weight: bold;
     z-index: 100; /* Đảm bảo nó nằm trên các phần tử bay */
     box-shadow: 0 0 15px #bb00bb; /* Hiệu ứng phát sáng */
@@ -47,7 +48,7 @@ body {
 /* Kiểu cho các chữ và trái tim bay lên */
 .flying-element {
     position: absolute;
-    font-size: 2.2em; /* Kích thước chữ mặc định */
+    font-size: 5vw; /* Kích thước chữ mặc định */
     color: #ff69b4; /* Màu hồng */
     text-shadow: 0 0 15px #ff1493, 0 0 30px #ff69b4, 0 0 40px #ff69b4; /* Hiệu ứng phát sáng */
     white-space: nowrap;
@@ -56,7 +57,7 @@ body {
 }
 
 .flying-element.heart {
-    font-size: 3.5em; /* Trái tim lớn hơn */
+    font-size: 8vw; /* Trái tim lớn hơn */
     color: red; /* Trái tim màu đỏ */
    text-shadow: 0 0 15px red, 0 0 40px #ff0000, 0 0 60px #ff0000;
 }
@@ -65,18 +66,18 @@ body {
 @keyframes flyUpFade {
     0% {
         opacity: 0;
-        transform: translateY(0) scale(0.8);
+        transform: translateY(0) scale(0.6); /* Giảm scale ban đầu */
     }
     10% {
-        opacity: 1; /* Hiện dần */
+        opacity: 1; 
     }
     80% {
-        opacity: 1; /* Duy trì độ sáng */
-        transform: translateY(-80vh) scale(1.1); /* Bay lên */
+        opacity: 1; 
+        transform: translateY(-80vh) scale(0.9); /* Giảm scale khi bay lên */
     }
     100% {
-        opacity: 0; /* Mờ dần khi bay lên cao */
-        transform: translateY(-100vh) scale(1.2); /* Bay ra khỏi màn hình */
+        opacity: 0; 
+        transform: translateY(-100vh) scale(1); /* Giảm scale cuối cùng */
     }
 }
 
