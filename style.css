@@ -1,0 +1,95 @@
+body {
+    margin: 0;
+    overflow: hidden; /* Ngăn cuộn trang khi các phần tử bay ra ngoài */
+    background-color: black; /* Nền đen */
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Chiếm toàn bộ chiều cao màn hình */
+    position: relative;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+/* Kiểu cho chữ cố định ở giữa */
+.fixed-message {
+    position: absolute;
+    bottom: 10%; /* Điều chỉnh vị trí theo ý muốn */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #7b007b; /* Màu nền cho hộp thoại */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    z-index: 100; /* Đảm bảo nó nằm trên các phần tử bay */
+    box-shadow: 0 0 15px #bb00bb; /* Hiệu ứng phát sáng */
+    text-align: center;
+    white-space: nowrap; /* Ngăn chữ xuống dòng */
+}
+
+/* Container cho các phần tử bay */
+#flying-elements-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Cho phép click xuyên qua các phần tử bay */
+}
+
+/* Kiểu cho các chữ và trái tim bay lên */
+.flying-element {
+    position: absolute;
+    font-size: 2.2em; /* Kích thước chữ mặc định */
+    color: #ff69b4; /* Màu hồng */
+    text-shadow: 0 0 15px #ff1493, 0 0 30px #ff69b4, 0 0 40px #ff69b4; /* Hiệu ứng phát sáng */
+    white-space: nowrap;
+    opacity: 0; /* Ban đầu ẩn */
+    animation: flyUpFade 4s ease-out forwards; /* Animation bay lên và mờ dần */
+}
+
+.flying-element.heart {
+    font-size: 3.5em; /* Trái tim lớn hơn */
+    color: red; /* Trái tim màu đỏ */
+   text-shadow: 0 0 15px red, 0 0 40px #ff0000, 0 0 60px #ff0000;
+}
+
+/* Keyframes cho animation bay lên và mờ dần */
+@keyframes flyUpFade {
+    0% {
+        opacity: 0;
+        transform: translateY(0) scale(0.8);
+    }
+    10% {
+        opacity: 1; /* Hiện dần */
+    }
+    80% {
+        opacity: 1; /* Duy trì độ sáng */
+        transform: translateY(-80vh) scale(1.1); /* Bay lên */
+    }
+    100% {
+        opacity: 0; /* Mờ dần khi bay lên cao */
+        transform: translateY(-100vh) scale(1.2); /* Bay ra khỏi màn hình */
+    }
+}
+
+/* Kiểu cho hiệu ứng hạt lấp lánh (sẽ được tạo bằng JS) */
+.sparkle {
+    position: absolute;
+    background-color: #ffe0f0; /* Thay đổi màu thành hồng nhạt hoặc trắng sáng */
+    box-shadow: 0 0 5px #ffc0cb; /* Thêm hiệu ứng phát sáng cho hạt */
+    /* ... */
+}
+
+@keyframes sparkleFade {
+    0% { opacity: 0; transform: scale(0); }
+    30% { opacity: 0.7; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0.5); }
+}
