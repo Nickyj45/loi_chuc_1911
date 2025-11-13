@@ -30,13 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
     "💞",  // Trái tim quay (Cũ)
     "💕",  // Hai trái tim
     "💓",  // Trái tim đập
-    "💘",  // Trái tim bị tên bắn
-    "💗",  // Trái tim lớn dần
-    "💛",  // Trái tim vàng
-    "💜",  // Trái tim tím
-    "🧡",  // Trái tim cam
-    "💫",  // Ngôi sao lấp lánh (thêm hiệu ứng phát sáng)
-    "✨"   // Ánh sao (thêm hiệu ứng phát sáng)
+    "💘"  // Trái tim bị tên bắn
+ 
 ];
 
     // Hàm tạo một phần tử bay ngẫu nhiên
@@ -70,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Tạo liên tục các phần tử bay
-    setInterval(createFlyingElement, 100); // Mỗi 0.8 giây tạo một phần tử mới
+    setInterval(createFlyingElement, 400); // Mỗi 0.8 giây tạo một phần tử mới
 
     // --- Hiệu ứng hạt lấp lánh (sparkle effect) ---
     function createSparkle() {
@@ -96,5 +91,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Tạo liên tục các hạt lấp lánh
-    setInterval(createSparkle, 10); // Mỗi 0.1 giây tạo một hạt mới
+    setInterval(createSparkle, 150); // Mỗi 0.1 giây tạo một hạt mới
 });

@@ -55,7 +55,7 @@ body {
     text-shadow: 0 0 15px #ff1493, 0 0 30px #ff69b4, 0 0 40px #ff69b4; /* Hiệu ứng phát sáng */
     white-space: nowrap;
     opacity: 0; /* Ban đầu ẩn */
-    animation: flyUpFade 4s ease-out forwards; /* Animation bay lên và mờ dần */
+    animation: flyUpFade 8s ease-out forwards; /* Animation bay lên và mờ dần */
 }
 
 .flying-element.heart {
@@ -86,15 +86,53 @@ body {
 /* Kiểu cho hiệu ứng hạt lấp lánh (sẽ được tạo bằng JS) */
 .sparkle {
     position: absolute;
-    background-color: #ffe0f0; /* Thay đổi màu thành hồng nhạt hoặc trắng sáng */
-    box-shadow: 0 0 5px #ffc0cb; /* Thêm hiệu ứng phát sáng cho hạt */
-    /* ... */
+    /* Màu trắng sáng giống sao */
+    background-color: #ffffff; 
+    /* Bỏ box-shadow hồng cũ và thay bằng shadow trắng mờ */
+    box-shadow: 0 0 3px #ffffff; 
+    border-radius: 50%; /* Giữ hình tròn */
 }
+.shooting-star {
+    position: absolute;
+    width: 4px;        /* Độ dày */
+    height: 100px;     /* Chiều dài đuôi */
+    background: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8)); /* Tạo đuôi mờ dần */
+    top: 0;
+    left: -100px; /* Bắt đầu ngoài màn hình */
+    transform: rotate(-10deg); /* Góc chéo */
+    opacity: 0;
+    z-index: 99;
+    
+    /* Áp dụng animation */
+    animation: shoot 3s linear infinite; /* 8s là tổng thời gian lặp lại */
+}
+.shooting-star.star-2 {
+    animation-delay: 5s; /* Bắt đầu sau 5 giây */
+    transform: rotate(20deg); 
+    opacity: 0;
+}
+
+/* Độ trễ cho Sao băng thứ 3 */
+.shooting-star.star-3 {
+    animation-delay: 10s; /* Bắt đầu sau 10 giây */
+    transform: rotate(-10deg); 
+    opacity: 0;
+}
+
+/* Độ trễ cho Sao băng thứ 4 (nếu bạn thêm) */
+.shooting-star.star-4 {
+    animation-delay: 17s; /* Bắt đầu sau 17 giây */
+    transform: rotate(10deg); 
+    opacity: 0;
+}
+
+/* Bạn cũng có thể thay đổi góc xoay một chút để chúng không trùng đường đi */
 
 @keyframes sparkleFade {
     0% { opacity: 0; transform: scale(0); }
-    30% { opacity: 0.7; transform: scale(1); }
-    100% { opacity: 0; transform: scale(0.5); }
+    /* Giảm độ sáng ở giữa chu kỳ để tạo cảm giác nhấp nháy mạnh hơn */
+    50% { opacity: 0.5; transform: scale(1); } 
+    100% { opacity: 0; transform: scale(0.2); } /* Kết thúc nhỏ và mờ đi */
 }
 /* Định nghĩa hiệu ứng nhấp nháy phát sáng */
 @keyframes pulseGlow {
@@ -112,5 +150,30 @@ body {
         text-shadow: 0 0 5px #fff, 0 0 10px #ff00ff; /* Quay về mức sáng ban đầu */
         box-shadow: 0 0 10px #bb00bb;
         opacity: 0.9;
+    }
+}
+/* Keyframes cho chuyển động sao băng */
+/* TRONG FILE style.css */
+
+@keyframes shoot {
+    0% {
+        transform: translate3d(0, 0, 0) rotate(30deg);
+        opacity: 0;
+    }
+    /* Tăng tỷ lệ % cho hành trình chạy qua (để chuyển động mượt hơn) */
+    1% {
+        opacity: 1; 
+    }
+    10% { /* Tăng từ 5% lên 10% */
+        transform: translate3d(120vw, 120vh, 0) rotate(30deg);
+        opacity: 0.8;
+    }
+    11% { /* Tăng từ 6% lên 11% */
+        opacity: 0;
+    }
+    /* Giữ thời gian ẩn lâu hơn */
+    100% {
+        transform: translate3d(120vw, 120vh, 0) rotate(30deg);
+        opacity: 0;
     }
 }
