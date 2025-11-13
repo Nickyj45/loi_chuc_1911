@@ -3,7 +3,15 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Các từ và biểu tượng sẽ bay lên
     const wordsAndHearts = [
-        "Yêu anh", "Love you", "hạnh phúc nhé","Love u so much", "Chúc mừng", "Hạnh phúc nha", "❤️", "💖", "💞", "19/11","Anh là nhất",
+    // Các câu chữ cũ (giữ nguyên)
+    "Yêu anh", 
+    "Love you", 
+    "hạnh phúc nhé",
+    "Love u so much", 
+    "Chúc mừng", 
+    "Hạnh phúc nha",
+    "19/11",
+    "Anh là nhất",
     "Yêu thương trọn vẹn",
     "Tuyệt vời nhất",
     "Chồng yêu",
@@ -14,8 +22,22 @@ document.addEventListener('DOMContentLoaded', () => {
     "Anh là người hùng",
     "Cùng nhau vượt qua",
     "Chúc mừng 19/11",
-    "Người đàn ông của em"
-    ];
+    "Người đàn ông của em",
+
+    // Ký tự trái tim và biểu tượng bổ sung
+    "❤️",  // Trái tim đỏ (Cũ)
+    "💖",  // Trái tim lấp lánh (Cũ)
+    "💞",  // Trái tim quay (Cũ)
+    "💕",  // Hai trái tim
+    "💓",  // Trái tim đập
+    "💘",  // Trái tim bị tên bắn
+    "💗",  // Trái tim lớn dần
+    "💛",  // Trái tim vàng
+    "💜",  // Trái tim tím
+    "🧡",  // Trái tim cam
+    "💫",  // Ngôi sao lấp lánh (thêm hiệu ứng phát sáng)
+    "✨"   // Ánh sao (thêm hiệu ứng phát sáng)
+];
 
     // Hàm tạo một phần tử bay ngẫu nhiên
     function createFlyingElement() {
@@ -24,9 +46,14 @@ document.addEventListener('DOMContentLoaded', () => {
         element.textContent = content;
         element.classList.add('flying-element');
 
-        if (content.includes('❤️') || content.includes('💖') || content.includes('💞')) {
-            element.classList.add('heart');
-        }
+       // Thêm các ký tự trái tim mới vào điều kiện OR (||) để áp dụng hiệu ứng .heart
+    if (content.includes('❤️') || content.includes('💖') || content.includes('💞') || 
+        content.includes('💕') || content.includes('💓') || content.includes('💘') || 
+        content.includes('💗') || content.includes('💛') || content.includes('💜') ||
+        content.includes('🧡') || content.includes('💫') || content.includes('✨')
+    ) {
+        element.classList.add('heart');
+    }
 
         // Đặt vị trí ngẫu nhiên ở phía dưới màn hình
         element.style.left = `${Math.random() * 100}%`;
