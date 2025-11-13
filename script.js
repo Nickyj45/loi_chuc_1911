@@ -3,7 +3,18 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Các từ và biểu tượng sẽ bay lên
     const wordsAndHearts = [
-        "Yêu anh", "Love you", "hạnh phúc nhé","Love u so much", "Chúc mừng", "Hạnh phúc nha", "❤️", "💖", "💞", "19/11"
+        "Yêu anh", "Love you", "hạnh phúc nhé","Love u so much", "Chúc mừng", "Hạnh phúc nha", "❤️", "💖", "💞", "19/11","Anh là nhất",
+    "Yêu thương trọn vẹn",
+    "Tuyệt vời nhất",
+    "Chồng yêu",
+    "Bên nhau trọn đời",
+    "Luôn vững vàng",
+    "Tự hào về anh",
+    "Đồng hành cùng em",
+    "Anh là người hùng",
+    "Cùng nhau vượt qua",
+    "Chúc mừng 19/11",
+    "Người đàn ông của em"
     ];
 
     // Hàm tạo một phần tử bay ngẫu nhiên
@@ -19,9 +30,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Đặt vị trí ngẫu nhiên ở phía dưới màn hình
         element.style.left = `${Math.random() * 100}%`;
-        element.style.bottom = `${Math.random() * 50 - 20}px`; // Bắt đầu từ dưới hoặc hơi ẩn
+        element.style.bottom = `${Math.random() * 10 - 5}vh`; // Bắt đầu từ dưới hoặc hơi ẩn
         element.style.animationDelay = `${Math.random() * 5}s`; // Delay ngẫu nhiên để không xuất hiện cùng lúc
-        element.style.fontSize = `${1 + Math.random() * 1.5}em`; // Kích thước ngẫu nhiên
+        element.style.fontSize = `${3 + Math.random() * 4}vw`; // Kích thước ngẫu nhiên
 
         flyingContainer.appendChild(element);
 
