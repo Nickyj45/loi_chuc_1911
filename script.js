@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Tạo liên tục các phần tử bay
-    setInterval(createFlyingElement, 400); // Mỗi 0.8 giây tạo một phần tử mới
+    setInterval(createFlyingElement, 100); // Mỗi 0.8 giây tạo một phần tử mới
 
     // --- Hiệu ứng hạt lấp lánh (sparkle effect) ---
     function createSparkle() {
