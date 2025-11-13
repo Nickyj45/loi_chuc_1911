@@ -18,7 +18,7 @@ body {
 /* Kiểu cho chữ cố định ở giữa */
 .fixed-message {
     position: absolute;
-    bottom: 10%; /* Điều chỉnh vị trí theo ý muốn */
+    bottom: 25%; /* Điều chỉnh vị trí theo ý muốn */
     left: 50%;
     transform: translateX(-50%);
     background-color: #7b007b; /* Màu nền cho hộp thoại */
@@ -27,8 +27,11 @@ body {
     padding: 1.5vw 3vw; /* Sử dụng vw thay cho 10px 20px */
     font-size: 3vw;   /* Sử dụng vw thay cho 1.2em */
     font-weight: bold;
-    z-index: 100; /* Đảm bảo nó nằm trên các phần tử bay */
-    box-shadow: 0 0 15px #bb00bb; /* Hiệu ứng phát sáng */
+    z-index: 0; /* Đảm bảo nó nằm trên các phần tử bay */
+    /*box-shadow: 0 0 15px #bb00bb; /* Hiệu ứng phát sáng */
+    animation: pulseGlow 1.5s ease-in-out infinite; 
+    /* Để chữ bên trong cũng phát sáng (như chữ bay lên) */
+    text-shadow: 0 0 5px #fff, 0 0 10px #ff00ff;
     text-align: center;
     /*white-space: normal; /* HOẶC BỎ DÒNG NÀY ĐI */ 
     width: 90%; /* Giới hạn chiều rộng tối đa của khung */
