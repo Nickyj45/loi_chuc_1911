@@ -55,7 +55,7 @@ body {
     text-shadow: 0 0 15px #ff1493, 0 0 30px #ff69b4, 0 0 40px #ff69b4; /* Hiệu ứng phát sáng */
     white-space: nowrap;
     opacity: 0; /* Ban đầu ẩn */
-    animation: flyUpFade 8s ease-out forwards; /* Animation bay lên và mờ dần */
+    animation: flyUpFade 6s ease-out forwards; /* Animation bay lên và mờ dần */
 }
 
 .flying-element.heart {
