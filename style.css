@@ -18,7 +18,7 @@ body {
 /* Kiểu cho chữ cố định ở giữa */
 .fixed-message {
     position: absolute;
-    bottom: 0%; /* Điều chỉnh vị trí theo ý muốn */
+    bottom: 10%; /* Điều chỉnh vị trí theo ý muốn */
     left: 50%;
     transform: translateX(-50%);
     background-color: #7b007b; /* Màu nền cho hộp thoại */
